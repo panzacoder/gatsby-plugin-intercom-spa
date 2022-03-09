@@ -5,9 +5,12 @@ const isEnabled = () =>
   window.IntercomAppId;
 
 exports.onInitialClientRender = () => {
+  console.log("initial render");
   if (!isEnabled()) {
     return;
   }
+
+  console.log("is enabled");
 
   window.Intercom("boot", {
     app_id: window.IntercomAppId,
